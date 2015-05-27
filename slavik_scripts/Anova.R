@@ -23,7 +23,6 @@ prepareAnova<-function(){
   write.csv(alldata, "wattsup_alldata.csv")
   
   alldata<- rbind(wattsupolio,wattsupmail,wattsupcommerce)
-  testVa <- aov(alldata$Watts ~ alldata$Testtype, data = alldata)
-  tuck<- TukeyHSD(testVa)
+  kruskal.test(alldata$Testtype ~alldata$Watts, data =alldata)
   
 }
