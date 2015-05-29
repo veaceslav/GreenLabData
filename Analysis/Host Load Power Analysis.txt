@@ -1,0 +1,61 @@
+What we do here is, appying Kruskal-Wallis on 3 data frames (for each measurment tool)
+These data frames contain Power measurments gathered in load for all 3 types of tests, 
+paired with the type of load they were under. The final data set looks like this:
+
+	Power	TestType
+1.	123	Olio
+2.	131	Ecommerce
+3.	141	Olio
+4	133	Mail
+5.	123	Ecommerce
+....(this is just an example)....
+
+Kruskal- Wallis is applied like this:
+
+kruskal.test(alldata$Testtype ~alldata$POWER, data =alldata)
+
+We are basically interested here to notice that different loads affect power consumption in different ways.
+
+
+1)Watts Up:
+
+	Kruskal-Wallis:
+
+	Kruskal-Wallis rank sum test
+
+	data:  alldata$Testtype by alldata$Watts
+	Kruskal-Wallis chi-squared = 271.46, df = 208, p-value = 0.002029
+
+	Result: reject null hypothesis (p-value is less than 0.05)
+
+2) UD2:
+	Kruskal-Wallis:
+	
+		1)Kruskal-Wallis rank sum test
+
+			data:  alldata$Testtype by alldata$Power_Mem
+			Kruskal-Wallis chi-squared = 261, df = 91, p-value < 2.2e-16
+		2)Kruskal-Wallis rank sum test
+
+			data:  alldata$Testtype by alldata$Power_CPU
+			Kruskal-Wallis chi-squared = 276.45, df = 164, p-value = 9.277e-08
+		3)Kruskal-Wallis rank sum test
+
+			data:  alldata$Testtype by alldata$Power_HDD5
+			Kruskal-Wallis chi-squared = 209.72, df = 84, p-value = 9.805e-13
+		4)Kruskal-Wallis rank sum test
+
+			data:  alldata$Testtype by alldata$Power_HDD5
+			Kruskal-Wallis chi-squared = 209.72, df = 84, p-value = 9.805e-13
+
+	Result: each of the tests has a p-value lower than 0.05 therefore, our null hypothesisan be rejected
+3) vSphere:
+
+	Kruskal-Wallis:
+
+	Kruskal-Wallis rank sum test
+
+	data:  alldata$Testtype by alldata$POWER
+		Kruskal-Wallis chi-squared = 193.41, df = 37, p-value < 2.2e-16
+
+	Result: reject null hypothesis (p-value is less than 0.05)

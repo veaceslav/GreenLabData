@@ -1,0 +1,52 @@
+Kruskal-Wallis rank sum test
+
+data:  overhead$Testtype by overhead$power
+Kruskal-Wallis chi-squared = 76.277, df = 13, p-value = 5.501e-11
+
+
+
+1) WattsUp overhead
+
+	1) Mail 
+		Kruskal-Wallis rank sum test
+
+		data:  overheadss$Testtype by overheadss$Watts
+		Kruskal-Wallis chi-squared = 229.48, df = 50, p-value < 2.2e-16
+	2)Olio
+		Kruskal-Wallis rank sum test
+
+		data:  overheads$Testtype by overheads$Watts
+		Kruskal-Wallis chi-squared = 175.48, df = 56, p-value = 3.024e-14
+	
+	3)Ecommerce
+		Kruskal-Wallis rank sum test
+
+		data:  overhead$Testtype by overhead$Watts
+		Kruskal-Wallis chi-squared = 198.79, df = 57, p-value < 2.2e-16
+
+2) vSphere
+
+	1)Ecomm:
+		Kruskal-Wallis rank sum test
+
+		data:  overhead$Testtype by overhead$POWER
+		Kruskal-Wallis chi-squared = 52.866, df = 5, p-value = 3.584e-10
+	
+	2)Olio
+		
+	Kruskal-Wallis rank sum test
+	
+		data:  overhead$Testtype by overhead$POWER
+		Kruskal-Wallis chi-squared = 177.56, df = 11, p-value < 2.2e-16
+
+	3)Mail
+
+	Kruskal-Wallis rank sum test
+
+		data:  overhead$Testtype by overhead$POWER
+		Kruskal-Wallis chi-squared = 239, df = 7, p-value < 2.2e-16
+
+
+3) UD2:
+
+	All 12 tests passed with pvalue < 2.2e-16
